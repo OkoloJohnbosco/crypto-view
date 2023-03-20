@@ -4,7 +4,7 @@ import Sidebar from "@/components/sidebar";
 
 const barlow = Barlow({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "600"],
 });
 
 export const metadata = {
@@ -20,7 +20,7 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body className={barlow.className}>
-        <main className="min-h-screen flex  w-full bg-[#DEDFE0]">
+        <main className="min-h-screen flex  w-full bg-[#FAFAFC]">
           <Sidebar />
           <section>{children}</section>
         </main>
