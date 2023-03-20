@@ -23,12 +23,16 @@ const SidebarLink = ({ link }: { link: LinkProp }) => {
     <Link
       href={link.link}
       className={clsx(
-        "w-full flex pl-4 items-center h-[48px] bg-transparent text-[#717171] hover:text-[#2624B5] transition-all ease-in-out duration-200 space-x-2 border-r-[3px] border-transparent",
-        isActive && "bg-[#2624B511] border-[#2624B5] text-[#2624B5]"
+        "w-full flex pl-4 items-center h-[48px] hover:!text-[#2624B5] transition-all ease-in-out duration-300 space-x-2 border-r-[3px] border-transparent"
       )}
+      style={{
+        background: isActive ? "#2624B511" : "transparent",
+        borderColor: isActive ? "#2624B5" : "transparent",
+        color: isActive ? "#2624B5" : "#717171",
+      }}
     >
       <Icon size={16} />
-      <p className={clsx("text-sm", isActive && "font-bold text-[#2624B5]")}>
+      <p className={clsx("text-sm ", isActive && "font-bold text-[#2624B5]")}>
         {link.label}
       </p>
     </Link>

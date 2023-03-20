@@ -16,7 +16,7 @@ export const links: LinkProp[] = [
   {
     label: "Stake",
     icon: "Layers",
-    link: "/settings",
+    link: "/stake",
   },
   {
     label: "Governance",
@@ -30,7 +30,7 @@ function Navbar() {
 
   const headerObj = links?.find((link) => link.link === pathname);
   return (
-    <div className="py-6 w-full">
+    <div className="py-7 w-full">
       <div className="flex items-center w-full justify-between px-4">
         <h2 className="font-bold text-xl">{headerObj?.label ?? "Home"}</h2>
         <div></div>

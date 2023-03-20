@@ -20,7 +20,7 @@ const links: LinkProp[] = [
   {
     label: "Stake",
     icon: "Layers",
-    link: "/settings",
+    link: "/stake",
   },
   {
     label: "Governance",
