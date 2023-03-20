@@ -1,91 +1,43 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+"use client";
+import useAxios from "@/hooks/useAxios";
+import React from "react";
 
 export default function Home() {
+  const { data, error, isLoading, mutateAsync } = useAxios();
+
+  const makeRequestForShalom = () => {
+    const body = {
+      collection_address: { street_address: "92 Landros Mare Street" },
+      delivery_address: { street_address: "5 Mountjoy Street" },
+      items: [{ qty: 3, vendor: "erreer", unit_price: 42, unit_weight_kg: 2 }],
+    };
+
+    const options = {
+      url: "https://api.sandbox.bobgo.co.za/v2/rates-at-checkout",
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        Authorization: "Bearer 607cdd7584a0474a98af798c8e3f6ca1",
+      },
+      body,
+    };
+
+    mutateAsync(options).then((res) => {
+      console.log(data);
+    });
+  };
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main className="h-screen flex flex-col w-full items-center justify-center">
+      <button
+        className="px-4 py-3 bg-teal-800 text-white rounded-md focus:ring-2"
+        onClick={makeRequestForShalom}
+      >
+        Make Api Call
+      </button>
+      {isLoading && <p>Loading.....</p>}
+      {error && <p>Request Failed</p>}
+      {data && <p>Request passed</p>}
     </main>
-  )
+  );
 }
