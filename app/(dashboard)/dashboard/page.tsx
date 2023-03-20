@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Dashboard() {
   return (
-    <main className="h-screen flex flex-col w-full items-center justify-center">
+    <main>
       <button className="px-4 py-3 bg-teal-800 text-white rounded-md focus:ring-2">
         Make Api Call
       </button>
