@@ -21,11 +21,11 @@ export default function DashboardLayout({
   return (
     <html lang="en">
       <body className={barlow.className}>
-        <main className="min-h-screen flex  w-full bg-[#FAFAFC]">
+        <main className="min-h-screen flex  w-full bg-[#FAFAFC] relative">
           <Sidebar />
           <section className="flex-1 w-full">
             <Navbar />
-            <div className="px-4">{children}</div>
+            <div className="px-6">{children}</div>
           </section>
         </main>
       </body>

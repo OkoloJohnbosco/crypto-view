@@ -30,8 +30,8 @@ function Navbar() {
 
   const headerObj = links?.find((link) => link.link === pathname);
   return (
-    <div className="py-7 w-full">
-      <div className="flex items-center w-full justify-between px-4">
+    <div className="py-7 w-full sticky top-0 z-10 bg-[#FAFAFC]">
+      <div className="flex items-center w-full justify-between px-6">
         <h2 className="font-bold text-xl">{headerObj?.label ?? "Home"}</h2>
         <div></div>
         <div className="w-8 h-8">

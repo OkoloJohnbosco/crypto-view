@@ -31,7 +31,7 @@ const links: LinkProp[] = [
 
 function Sidebar() {
   return (
-    <aside className="h-screen bg-white w-[230px] pl-4 pt-10 space-y-12">
+    <aside className="h-screen bg-white w-[230px] pl-4 pt-10 space-y-12 sticky top-0">
       <div>
         <Image src={logoImg} alt="logo" />
       </div>
