@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
 
-function SupplyTable() {
+function BorrowTable() {
   return (
     <div className="shadow-sm overflow-hidden p-4 bg-white mb-8 rounded">
       <table className="border-collapse table-auto  w-full text-sm rounded-full border-spacing-0 gap-5">
@@ -84,4 +84,4 @@ function SupplyTable() {
   );
 }
 
-export default SupplyTable;
+export default BorrowTable;

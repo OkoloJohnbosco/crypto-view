@@ -6,6 +6,7 @@ import Link from "next/link";
 import { LinkProp } from "../sidebar";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import React from "react";
 
 const icons = { Grid, User, DollarSign, Cpu, LifeBuoy, Layers };
 

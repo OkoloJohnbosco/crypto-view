@@ -18,7 +18,7 @@ function ApySection() {
             Max limit: <span className="font-bold text-[#1B1E21]">$30,000</span>
           </p>
         </div>
-        <Progress value={50} />
+        <Progress value={30} />
       </div>
     </div>
   );

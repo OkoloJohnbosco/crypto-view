@@ -34,7 +34,7 @@ function Navbar() {
       <div className="flex items-center w-full justify-between px-6">
         <h2 className="font-bold text-xl">{headerObj?.label ?? "Home"}</h2>
         <div></div>
-        <div className="w-8 h-8">
+        <div className="w-8 h-8 cursor-pointer">
           <Image src={avatar} alt="profile" />
         </div>
       </div>
