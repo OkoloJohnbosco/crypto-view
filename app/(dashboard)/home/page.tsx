@@ -13,12 +13,12 @@ export default function Dashboard() {
       <Banner />
       {/* <Example /> */}
       <ApySection />
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {stats.map((stat) => (
           <StatCard key={stat.text} {...stat} />
         ))}
       </div>
-      <div className="grid grid-col-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-col-1 lg:grid-cols-2 gap-5">
         <div className="space-y-6">
           <div className="space-y-2">
             <h3 className="uppercase font-bold text-sm text-gray-800">

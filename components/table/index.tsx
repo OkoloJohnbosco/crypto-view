@@ -1,10 +1,11 @@
 import React from "react";
 import { ChevronUpDownIcon } from "@heroicons/react/24/outline";
+import CustomRadio from "../checkbox";
 
 function SupplyTable() {
   return (
-    <div className="shadow-sm overflow-hidden p-3 bg-white mb-8 rounded">
-      <table className="border-collapse table-auto  w-full text-sm rounded-full border-spacing-0 gap-5">
+    <div className="shadow-sm overflow-hidden p-2 bg-white mb-8 rounded">
+      <table className="border-collapse table-auto w-full text-sm rounded-full border-spacing-0">
         <thead>
           <tr className="bg-[#FAFAFC] py-2">
             <th className="font-bold p-4 pl-8 rounded-tl-lg rounded-bl-lg text-slate-700 text-left">
@@ -43,7 +44,7 @@ function SupplyTable() {
                 />
               </div>
             </th>
-            <th className="font-bold p-4 pr-8 text-slate-700 text-left rounded-tr-lg rounded-br-lg">
+            <th className="font-bold p-4 text-slate-700 text-left rounded-tr-lg rounded-br-lg">
               <div className="flex items-end gap-1">
                 Action
                 <ChevronUpDownIcon
@@ -59,21 +60,27 @@ function SupplyTable() {
             <td className="p-4 pl-8 text-slate-700">TRX</td>
             <td className="p-4 text-slate-700">4.65%</td>
             <td className="p-4 text-slate-700">1961</td>
-            <td className="p-4 text-slate-700">1961</td>
-            <td className="p-4 pr-8 text-slate-700">1961</td>
+            <td className="p-4 text-slate-700">
+              <CustomRadio isOnDisplay={true} />
+            </td>
+            <td className="p-4  text-slate-700">1961</td>
           </tr>
           <tr>
             <td className="p-4 pl-8 text-slate-700">TRX</td>
             <td className="p-4 text-slate-700">4.65%</td>
             <td className="p-4 text-slate-700">1972</td>
-            <td className="p-4 text-slate-700">1961</td>
-            <td className="p-4 pr-8 text-slate-700">1972</td>
+            <td className="p-4 text-slate-700">
+              <CustomRadio />
+            </td>
+            <td className="p-4  text-slate-700">1972</td>
           </tr>
           <tr>
             <td className="p-4 pl-8 text-slate-700">TRX</td>
             <td className="p-4 text-slate-700">4.65%</td>
             <td className="p-4 text-slate-700">1972</td>
-            <td className="p-4 text-slate-700">1975</td>
+            <td className="p-4 text-slate-700">
+              <CustomRadio />
+            </td>
             <td className="p-4  text-slate-700">1975</td>
           </tr>
         </tbody>
